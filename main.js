@@ -2,15 +2,15 @@ const scenes = [
   { label: "", subtitle: "", caption: "", render: scene0 },
   {
     label: "Scene 1: Setting the Stage",
-    subtitle: "How superhero movies exploded in number.",
-    caption: "Movie count per year.",
+    subtitle: "How superhero movies exploded in number and became a billion dollar market.",
+    caption: "Movie count and revenue per year.",
     render: scene1,
   },
   {
     label: "Scene 2: The Formula for Success",
-    subtitle: "Studios made bets. Some failed. Others made billions.",
-    caption: "Each bubble is a movie. Red = profitable.",
-    render: scene2,
+    subtitle: "Big budgets, bigger risks. Which superhero movies paid off?",
+    caption: "Each bubble is a movie. Color shows profitability: red = flop, yellow = breakeven, green = success (2.5x budget).",
+    render: scene2
   },
   {
     label: "Scene 3: Studio Showdown",
