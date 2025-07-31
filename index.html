@@ -3,22 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <title>Built to Win</title>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="https://unpkg.com/d3-annotation@2.5.1/d3-annotation.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-  <h1>The Rise of Superheroes (Cinematically)</h1>
+  <main class="wrapper">
+    <!-- Hero Landing Section -->
+    <section id="hero">
+      <h1 class="hero-title">🦸‍♂️ Built to Win</h1>
+      <p class="hero-subtitle">How Superhero Movies Engineered a Global Takeover</p>
+      <p class="hero-desc">A data-driven story of how Hollywood franchises reshaped the box office using character families, studio strategies, and a blockbuster formula.</p>
+      <button id="start-btn">Begin the Story</button>
+    </section>
 
-  <div id="scene-label"></div>
-  <div id="vis"></div>
+    <!-- Scene Content -->
+    <section id="scene-container" style="display: none;">
+      <h2 id="scene-label"></h2>
+      <p id="scene-subtitle"></p>
+      <div id="vis" class="vis-container"></div>
+      <p id="scene-caption"></p>
+    </section>
 
-  <button id="next-btn">Next</button>
+    <div class="navigation" id="nav-container" style="display: none;">
+      <button id="next-btn">Next</button>
+    </div>
+  </main>
 
+  <!-- Scene Scripts -->
+  <script src="scenes/scene0.js"></script>
   <script src="scenes/scene1.js"></script>
   <script src="scenes/scene2.js"></script>
   <script src="scenes/scene3.js"></script>
   <script src="scenes/scene4.js"></script>
+  <script src="scenes/scene5.js"></script>
+
+  <!-- Main Controller -->
   <script src="main.js"></script>
 </body>
 </html>
