@@ -2,8 +2,8 @@ const scenes = [
   { label: "", subtitle: "", caption: "", render: scene0 },
   {
     label: "Scene 1: Setting the Stage",
-    subtitle: "How superhero movies exploded in number and revenue.",
-    caption: "Movie count and inflation-adjusted gross per year.",
+    subtitle: "How superhero movies exploded in number.",
+    caption: "Movie count per year.",
     render: scene1,
   },
   {

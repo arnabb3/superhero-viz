@@ -152,3 +152,13 @@ button:hover {
 .scene-buttons .jump-btn:hover {
   background: #e8f1fc;
 }
+
+.tooltip {
+  font-size: 13px;
+  line-height: 1.4;
+  max-width: 250px;
+}
+.tooltip ul {
+  margin: 0;
+  padding: 0 0 0 16px;
+}
