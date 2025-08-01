@@ -64,7 +64,7 @@ function scene3() {
       .domain(distributors)
       .range(d3.schemeTableau10);
 
-    // === 2. DRAW AXES AFTER GRIDLINES ===
+    // AXES
     svg.append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(d3.axisBottom(x).tickFormat(d3.format("d")))
@@ -74,7 +74,7 @@ function scene3() {
       .call(d3.axisLeft(y).tickFormat(d => `$${(d / 1e9).toFixed(1)}B`))
       .attr("font-size", "12px");
 
-    // ✅ STACKED AREA CHART (single append)
+    // STACKED AREA CHART
     const area = d3.area()
       .x(d => x(d.data.year))
       .y0(d => y(d[0]))
@@ -104,7 +104,7 @@ function scene3() {
       })
       .on("mouseleave", () => tooltip.transition().duration(200).style("opacity", 0));
 
-    // ✅ VERTICAL GRIDLINES (draw before areas)
+    // VERTICAL GRIDLINES
     svg.append("g")
       .attr("class", "grid-v")
       .selectAll("line")
@@ -120,7 +120,7 @@ function scene3() {
       .attr("stroke-opacity", 0.6)
       .attr("stroke-dasharray", "3,3");
 
-    // === 3. TOOLTIP SETUP ===
+    // TOOLTIP
     const tooltip = d3.select("#vis")
       .append("div")
       .attr("class", "tooltip")
@@ -133,7 +133,7 @@ function scene3() {
       .style("opacity", 0);
 
 
-    // ✅ Legend (bottom, fixed by user)
+    // LEGEND
     const legend = svg.append("g")
       .attr("transform", `translate(${width / 2 - 350}, ${height + 40})`);
 

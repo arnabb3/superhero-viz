@@ -46,7 +46,7 @@ function scene4() {
 
     const radius = d3.scaleSqrt()
       .domain([0, d3.max(bubbles, d => d.value)])
-      .range([10, 60]);
+      .range([5, 75]);
 
     const colorScale = {
       Marvel: d3.scaleLinear().domain([0, 1]).range(["#ff9999", "#e20303"]),
@@ -77,12 +77,13 @@ function scene4() {
       .data(bubbles)
       .enter()
       .append("circle")
-      .attr("r", d => radius(d.value))
+      .attr("r", 0) // Start with radius 0
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
       .attr("fill", d => colorScale[d.franchise](d.pctOfFranchise))
       .attr("stroke", "#fff")
       .attr("stroke-width", 1.5)
+      .attr("opacity", 1)
       .on("mousemove", function (event, d) {
         tooltip
           .html(`<strong>${d.name}</strong><br>${d.franchise}<br>$${(d.value / 1e9).toFixed(2)}B<br>${(d.pctOfFranchise * 100).toFixed(1)}% of ${d.franchise}`)
@@ -90,14 +91,17 @@ function scene4() {
           .style("top", event.pageY - 40 + "px")
           .transition().duration(100).style("opacity", 1);
       })
-      .on("mouseleave", () => tooltip.transition().duration(200).style("opacity", 0));
+      .on("mouseleave", () => tooltip.transition().duration(200).style("opacity", 0))
+      .transition()
+      .duration(800)
+      .attr("r", d => radius(d.value));
 
     svg.selectAll("label")
       .data(bubbles)
       .enter()
       .append("text")
       .attr("x", d => d.x)
-      .attr("y", d => d.y + 4) // slight vertical adjustment
+      .attr("y", d => d.y + 4)
       .attr("text-anchor", "middle")
       .attr("fill", "#fff")
       .attr("font-weight", "bold")

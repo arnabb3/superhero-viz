@@ -112,6 +112,13 @@ function scene1() {
       .attr("stroke-opacity", 0.95)
       .attr("d", lineRevenue);
 
+    svg.selectAll("path")
+      .transition()
+      .duration(1000)
+      .attrTween("stroke-dasharray", function() {
+        const length = this.getTotalLength();
+        return d3.interpolateString(`0,${length}`, `${length},${length}`);
+      });
 
     svg.selectAll(".dot")
       .data(yearData)

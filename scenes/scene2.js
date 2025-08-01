@@ -110,29 +110,31 @@ function scene2() {
       .attr("class", "bubble")
       .attr("cx", d => x(d.budget))
       .attr("cy", d => y(d.gross))
-      .attr("r", d => radius(d.gross))
+      .attr("r", 0)
       .attr("fill", d => color(d))
       .attr("stroke", "#444")
       .attr("opacity", 0.75)
       .on("mouseover", (event, d) => {
-        const label = {
-          flop: "❌ Flop",
-          moderate: "➖ Moderate",
-          hit: "✅ Hit"
-        }[d.rating];
-
-        tooltip.transition().duration(200).style("opacity", 1);
-        tooltip.html(
-          `<strong>${d.title}</strong><br/>
-           Budget: $${(d.budget / 1e6).toFixed(1)}M<br/>
-           Gross: $${(d.gross / 1e6).toFixed(1)}M<br/>
-           ${label}`
-        )
-        .style("left", (event.pageX + 12) + "px")
-        .style("top", (event.pageY - 28) + "px");
+      const label = {
+        flop: "❌ Flop",
+        moderate: "➖ Moderate",
+        hit: "✅ Hit"
+      }[d.rating];
+      tooltip.transition().duration(200).style("opacity", 1);
+      tooltip.html(
+        `<strong>${d.title}</strong><br/>
+         Budget: $${(d.budget / 1e6).toFixed(1)}M<br/>
+         Gross: $${(d.gross / 1e6).toFixed(1)}M<br/>
+         ${label}`
+      )
+      .style("left", (event.pageX + 12) + "px")
+      .style("top", (event.pageY - 28) + "px");
       })
       .on("mouseout", () => {
-        tooltip.transition().duration(300).style("opacity", 0);
-      });
+      tooltip.transition().duration(300).style("opacity", 0);
+      })
+      .transition()
+      .duration(900)
+      .attr("r", d => 1 * radius(d.gross));
   });
 }
