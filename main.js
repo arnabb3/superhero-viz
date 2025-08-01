@@ -14,10 +14,10 @@ const scenes = [
   },
   {
     label: "Scene 3: Studio Showdown",
-    subtitle: "Disney/Marvel overtook the genre post-2012.",
-    caption: "Box office revenue by studio over time.",
-    render: scene3,
-  },
+    subtitle: "Market share shifts across decades of superhero films.",
+    caption: "Share of yearly box office gross by distributor (normalized 0–100%).",
+    render: scene3
+  },    
   {
     label: "Scene 4: One Genre, Many Universes",
     subtitle: "Franchises became the engine of blockbuster storytelling.",

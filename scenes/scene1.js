@@ -80,6 +80,13 @@ function scene1() {
       .call(d3.axisLeft(yCount).tickSize(-width).tickFormat(""))
       .selectAll("line").attr("stroke", "#eee");
 
+    svg.append("g")
+      .attr("class", "grid")
+      .attr("transform", `translate(0,${height})`)
+      .call(d3.axisBottom(x).tickSize(-height).tickFormat(""))
+      .selectAll("line")
+      .attr("stroke", "#eee");
+
     // Line generators
     const lineCount = d3.line()
       .x(d => x(d.year))
