@@ -21,7 +21,7 @@ const scenes = [
   {
     label: "One Genre, Many Universes",
     subtitle: "Franchises and characters are the backbone of modern superhero storytelling.",
-    caption: "Treemap shows total revenue by character family based on franchise.",
+    caption: "Bubble chart shows total revenue by character family based on franchise.",
     render: scene4
   },
   {

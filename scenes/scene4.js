@@ -73,7 +73,7 @@ function scene4() {
       .style("opacity", 0)
       .style("pointer-events", "none");
 
-    const nodes = svg.selectAll("circle")
+    svg.selectAll("circle")
       .data(bubbles)
       .enter()
       .append("circle")
