@@ -20,9 +20,9 @@ const scenes = [
   },    
   {
     label: "Scene 4: One Genre, Many Universes",
-    subtitle: "Franchises became the engine of blockbuster storytelling.",
-    caption: "Treemap shows revenue by franchise.",
-    render: scene4,
+    subtitle: "Franchises and characters are the backbone of modern superhero storytelling.",
+    caption: "Treemap shows total revenue by character family based on franchise.",
+    render: scene4
   },
   {
     label: "Explore Again",
